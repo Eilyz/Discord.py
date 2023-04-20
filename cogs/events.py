@@ -15,7 +15,6 @@ class Events(commands.Cog):
         print('Logged in as:')
         print(f'Username: {self.bot.user.name}')
         print(f'ID: {str(self.bot.user.id)}')
-        print('------')
         await self.bot.change_presence(activity = discord.Game(name = "help"))
         if not hasattr(self, "uptime"):
             self.bot.uptime = datetime.datetime.now(datetime.timezone.utc)
