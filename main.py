@@ -11,8 +11,8 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 class PythonBot(commands.Bot):
     def __init__(self):
         super().__init__(
-            intents = discord.Intents.all(), command_prefix = '.',
-            description = "My Python experiment.", )
+            intents=discord.Intents.all(), command_prefix='.',
+            description="My Python experiment.", )
         self.uptime = None
         self.client_id = 1095082464432627851
         self.owner_id = 488699894023061516
@@ -30,7 +30,7 @@ class PythonBot(commands.Bot):
         # Add views here to be persistent
 
     def run(self):
-        super().run(token = self.token, reconnect = True)
+        super().run(token=self.token, reconnect=True)
 
 
 python = PythonBot()

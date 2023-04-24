@@ -15,7 +15,7 @@ class Events(commands.Cog):
         print('Logged in as:')
         print(f'Username: {self.bot.user.name}')
         print(f'ID: {str(self.bot.user.id)}')
-        await self.bot.change_presence(activity = discord.Game(name = "help"))
+        await self.bot.change_presence(activity=discord.Game(name="help"))
         if not hasattr(self, "uptime"):
             self.bot.uptime = datetime.datetime.now(datetime.timezone.utc)
 
@@ -26,9 +26,9 @@ class Events(commands.Cog):
         elif isinstance(error, commands.DisabledCommand):
             await ctx.send("This command is disabled.")
         elif isinstance(error, commands.CommandInvokeError):
-            print(f'In {ctx.command.qualified_name}:', file = sys.stderr)
+            print(f'In {ctx.command.qualified_name}:', file=sys.stderr)
             traceback.print_tb(error.original.__traceback__)
-            print(f'{error.original.__class__.__name__}: {error.original}', file = sys.stderr)
+            print(f'{error.original.__class__.__name__}: {error.original}', file=sys.stderr)
         elif isinstance(error, commands.CommandNotFound):
             return
 
